@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Giftify | Find the Perfect Gift</title>
+
+  <meta name="description" content="Discover thoughtful gifts for birthdays, anniversaries, friends and family.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announcement-bar">
+    ✨ A little gift, a lot of happiness!
+    <span>Find something special today</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="navbar">
+
+      <a href="#home" class="logo">
+        <span class="logo-icon">🎁</span>
+        Giftify<span class="logo-dot">.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#finder">Gift Finder</a>
+        <a href="#collection">Explore Gifts</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#wishlist" class="wishlist-link">
+          ♡ Wishlist
+          <span id="wishlistCount">0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          onclick="toggleMenu()"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+        <span class="eyebrow">✦ THE ART OF GIFTING</span>
+
+        <h1>
+          Make Someone's Day
+          <span>Extra Special.</span>
+        </h1>
+
+        <p class="hero-description">
+          Discover thoughtful gifts for your favourite people.
+          Because the best gifts aren't just things — they're
+          little moments of happiness.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#collection" class="btn-primary">
+            Explore Gifts <span>→</span>
+          </a>
+
+          <a href="#finder" class="btn-secondary">
+            Find My Gift ♡
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <span>💗</span>
+            <span>🎀</span>
+            <span>🌷</span>
+          </div>
+
+          <p>
+            <strong>50+ gift ideas</strong>
+            <br>
+            For every special moment
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+
+        <div class="floating-note note-one">
+          💌 Made with love
+        </div>
+
+        <div class="main-gift">
+          <div class="gift-ribbon"></div>
+          <div class="gift-box">🎁</div>
+        </div>
+
+        <div class="floating-note note-two">
+          ✨ Just for you
+        </div>
+
+        <span class="decor decor-heart">♡</span>
+        <span class="decor decor-star">✦</span>
+        <span class="decor decor-flower">🌸</span>
+      </div>
+
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <div class="benefit-item">
+        <span class="benefit-icon">💝</span>
+        <div>
+          <h3>Thoughtful Picks</h3>
+          <p>Gifts with meaning</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">💰</span>
+        <div>
+          <h3>Every Budget</h3>
+          <p>Find your price range</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🎀</span>
+        <div>
+          <h3>Every Occasion</h3>
+          <p>Make moments special</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">💜</span>
+        <div>
+          <h3>Made Simple</h3>
+          <p>Choose with confidence</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section categories-section" id="categories">
+
+      <div class="section-heading">
+        <span class="eyebrow">EXPLORE BY INTEREST</span>
+        <h2>Find Their Kind of <span>Happy.</span></h2>
+        <p>Click a category to discover gifts picked just for them.</p>
+      </div>
+
+      <div class="category-grid">
+
+        <button class="category-card cat-pink"
+          onclick="chooseCategory('Personalized')">
+          <span class="category-emoji">💌</span>
+          <strong>Personalized</strong>
+          <span>Made just for them →</span>
+        </button>
+
+        <button class="category-card cat-blue"
+          onclick="chooseCategory('Technology')">
+          <span class="category-emoji">🎧</span>
+          <strong>Technology</strong>
+          <span>For the tech lover →</span>
+        </button>
+
+        <button class="category-card cat-purple"
+          onclick="chooseCategory('Fashion')">
+          <span class="category-emoji">👜</span>
+          <strong>Fashion</strong>
+          <span>A little extra style →</span>
+        </button>
+
+        <button class="category-card cat-yellow"
+          onclick="chooseCategory('Home Decor')">
+          <span class="category-emoji">🏡</span>
+          <strong>Home Decor</strong>
+          <span>Cosy little upgrades →</span>
+        </button>
+
+        <button class="category-card cat-peach"
+          onclick="chooseCategory('Beauty')">
+          <span class="category-emoji">🌸</span>
+          <strong>Beauty</strong>
+          <span>Self-care favourites →</span>
+        </button>
+
+        <button class="category-card cat-green"
+          onclick="chooseCategory('Food')">
+          <span class="category-emoji">🍫</span>
+          <strong>Food & Treats</strong>
+          <span>Sweeten their day →</span>
+        </button>
+
+        <button class="category-card cat-lavender"
+          onclick="chooseCategory('Books')">
+          <span class="category-emoji">📚</span>
+          <strong>Books</strong>
+          <span>For curious minds →</span>
+        </button>
+
+        <button class="category-card cat-mint"
+          onclick="chooseCategory('Plants')">
+          <span class="category-emoji">🪴</span>
+          <strong>Plants</strong>
+          <span>Grow a little joy →</span>
+        </button>
+
+        <button class="category-card cat-peach"
+          onclick="chooseCategory('Experiences')">
+          <span class="category-emoji">🎉</span>
+          <strong>Experiences</strong>
+          <span>Memories that last →</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Gift Finder -->
+    <section class="section finder-section" id="finder">
+
+      <div class="finder-box">
+
+        <div class="finder-heading">
+          <span class="eyebrow">YOUR PERSONAL GIFT ASSISTANT</span>
+          <h2>Let's Find the <span>Perfect Gift.</span></h2>
+          <p>Tell us a little about them. We'll help you find a lovely gift.</p>
+        </div>
+
+        <div class="finder-grid">
+
+          <div class="form-group">
+            <label for="person">Who is it for?</label>
+            <select id="person">
+              <option value="">Anyone</option>
+              <option value="Friend">Friend</option>
+              <option value="Partner">Partner</option>
+              <option value="Mother">Mother</option>
+              <option value="Father">Father</option>
+              <option value="Sister">Sister</option>
+              <option value="Brother">Brother</option>
+              <option value="Family">Family</option>
+              <option value="Everyone">Anyone special</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="occasion">What's the occasion?</label>
+            <select id="occasion">
+              <option value="">Any occasion</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Graduation">Graduation</option>
+              <option value="Housewarming">Housewarming</option>
+              <option value="Thank You">Thank You</option>
+              <option value="Just Because">Just Because</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Your budget</label>
+            <select id="budget">
+              <option value="">Any budget</option>
+              <option value="300">Under ₹300</option>
+              <option value="500">Under ₹500</option>
+              <option value="1000">Under ₹1,000</option>
+              <option value="2000">Under ₹2,000</option>
+              <option value="5000">Under ₹5,000</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Gift category</label>
+            <select id="category">
+              <option value="">Any category</option>
+              <option value="Personalized">Personalized</option>
+              <option value="Technology">Technology</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Home Decor">Home Decor</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Food">Food & Treats</option>
+              <option value="Books">Books</option>
+              <option value="Plants">Plants</option>
+              <option value="Experiences">Experiences</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button class="btn-primary finder-button"
+          type="button" onclick="findGifts()">
+          Find My Perfect Gift ✨
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Gift Collection -->
+    <section class="section collection-section" id="collection">
+
+      <div class="section-heading collection-heading">
+        <span class="eyebrow">A LITTLE SOMETHING FOR EVERYONE</span>
+        <h2>Gifts They'll <span>Love.</span></h2>
+        <p>Explore our collection and find your next favourite gift.</p>
+      </div>
+
+      <!-- Search -->
+      <div class="collection-toolbar">
+
+        <div class="search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search gifts, categories..."
+            aria-label="Search gifts"
+          >
+        </div>
+
+        <div class="sort-box">
+          <label for="sortBy">Sort:</label>
+          <select id="sortBy">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Quick category filters -->
+      <div class="quick-filters">
+
+        <button class="filter-chip active"
+          data-category-filter="All">All Gifts</button>
+
+        <button class="filter-chip"
+          data-category-filter="Personalized">Personalized</button>
+
+        <button class="filter-chip"
+          data-category-filter="Technology">Technology</button>
+
+        <button class="filter-chip"
+          data-category-filter="Fashion">Fashion</button>
+
+        <button class="filter-chip"
+          data-category-filter="Home Decor">Home Decor</button>
+
+        <button class="filter-chip"
+          data-category-filter="Beauty">Beauty</button>
+
+        <button class="filter-chip"
+          data-category-filter="Food">Food</button>
+
+        <button class="filter-chip"
+          data-category-filter="Books">Books</button>
+
+        <button class="filter-chip"
+          data-category-filter="Plants">Plants</button>
+
+        <button class="filter-chip"
+          data-category-filter="Experiences">Experiences</button>
+
+      </div>
+
+      <div class="results-header">
+        <p id="resultCount">Loading gifts...</p>
+
+        <button class="text-button" onclick="clearFilters()">
+          Clear filters ↺
+        </button>
+      </div>
+
+      <!-- JavaScript displays gift cards here -->
+      <div class="gift-grid" id="giftResults"></div>
+
+      <div class="load-more-wrap">
+        <button class="btn-secondary" id="loadMoreBtn" type="button">
+          Load More Gifts ↓
+        </button>
+      </div>
+
+      <div class="surprise-box">
+        <div class="surprise-emoji">🎲</div>
+
+        <div>
+          <h3>Feeling a little indecisive?</h3>
+          <p>Let a surprise pick your next favourite gift!</p>
+        </div>
+
+        <button class="btn-primary"
+          type="button" onclick="surpriseGift()">
+          Surprise Me! ✨
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Wishlist -->
+    <section class="section wishlist-section" id="wishlist">
+
+      <div class="section-heading">
+        <span class="eyebrow">YOUR LITTLE COLLECTION</span>
+        <h2>Saved with <span>Love.</span> ♡</h2>
+        <p>Keep your favourite gift ideas all in one place.</p>
+      </div>
+
+      <div id="emptyWishlist" class="empty-wishlist">
+        <div class="empty-wishlist-emoji">💝</div>
+        <h3>Your wishlist is waiting!</h3>
+        <p>Tap the heart on a gift card to save a favourite here.</p>
+
+        <a href="#collection" class="btn-secondary">
+          Discover Gifts →
+        </a>
+      </div>
+
+      <div class="gift-grid" id="wishlistResults"></div>
+
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+
+      <div class="newsletter-content">
+        <span class="eyebrow">A LITTLE INSPIRATION IN YOUR INBOX</span>
+
+        <h2>Good Gifts. Happy <span>Hearts.</span></h2>
+
+        <p>
+          Get thoughtful gift ideas and special-occasion inspiration.
+        </p>
+
+        <form id="newsletterForm" class="newsletter-form">
+
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            aria-label="Email address"
+            required
+          >
+
+          <button type="submit" class="btn-primary">
+            Join Us →
+          </button>
+
+        </form>
+
+        <p id="newsletterMessage" class="newsletter-message"></p>
+
+      </div>
+
+      <div class="newsletter-art">💌</div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-icon">🎁</span>
+          Giftify<span class="logo-dot">.</span>
+        </a>
+
+        <p>
+          Making gifting simpler, sweeter and a little more special.
+          Find a gift that says what words sometimes can't.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#finder">Gift Finder</a>
+        <a href="#collection">All Gifts</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Your Gift Journey</h3>
+        <a href="#wishlist">My Wishlist</a>
+        <a href="#collection">Popular Gifts</a>
+        <a href="#finder">Find a Gift</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Giftify. Made with ♡ for every special moment.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+
+  </footer>
+
+  <!-- Gift details popup -->
+  <div
+    class="modal"
+    id="giftModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Gift details"
+    aria-hidden="true"
+  >
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeGiftModal()"
+        aria-label="Close details"
+      >
+        ×
+      </button>
+
+      <!-- JavaScript inserts selected gift details here -->
+      <div id="modalBody"></div>
+
+    </div>
+
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- Back to top -->
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+</body>
+</html>
